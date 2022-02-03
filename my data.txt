@@ -1,3 +1,4 @@
 name vinod
 empid 5002
 company myronteq
+blood group A+
