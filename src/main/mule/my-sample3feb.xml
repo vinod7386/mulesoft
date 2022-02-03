@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="35f115c2-a96b-48b1-b8e4-ade5ac368b07" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<flow name="my-sample3febFlow" doc:id="63305b2b-9b28-4a3a-ae50-ed119a7da481" >
+		<http:listener doc:name="Listener" doc:id="29e2db8b-7bab-4c9a-8552-2402c64a8d4e" config-ref="HTTP_Listener_config" path="sample"/>
+		<set-payload value="**payload**" doc:name="Set Payload" doc:id="d48662d5-1398-418d-ad03-fc1543dda273" />
+		<logger level="INFO" doc:name="Logger" doc:id="5cf17d9c-a753-4fa9-a6fd-e1dfbb190a81" message="**after payload**"/>
+	</flow>
+</mule>
